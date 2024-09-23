@@ -1,0 +1,310 @@
+<!DOCTYPE html>    
+<html lang="en">    
+<head>    
+<meta charset="UTF-8">    
+<title>Product Portfolio</title>    
+<style>   
+body {
+  background-color:lightgrey;
+}
+.left-image {  
+            float: left; /* Float the image to the left */  
+            width: 150px; /* Custom image width */  
+            height: auto; /* Maintain the original aspect ratio of the image */  
+            margin-right: 10px; /* Add some spacing on the right side */  
+        }  
+.header {  
+  background-color: lightgrey;  
+  text-align: center;  
+  padding: 20px;  
+}  
+.topnav {    
+  overflow: hidden;    
+  background-color: #333;    
+}    
+.topnav a {    
+  float: left;    
+  display: block;    
+  color: white;    
+  text-align: center;    
+  padding: 14px 16px;    
+  text-decoration: none;    
+}    
+.topnav a:hover {    
+  background-color: lightgrey;    
+  color: white;    
+}  
+.products {  
+  display: flex;  
+  flex-wrap: wrap; /* If line breaks are needed */  
+}     
+.product {    
+  /* Remove text align: center; Style to display images and buttons starting from the left side */  
+  margin-bottom: 20px; /* The spacing between each product */  
+}    
+.product-item { /* Add container class */  
+  display: flex; /* Use Flex layout to display images and buttons on one line */  
+  flex-direction: column; /* The default is column, but it can also be explicitly specified */  
+  align-items: flex-start; /* Align content from the left */
+  margin-right: 10px; /* Optional: Add right margin to each project */  
+}  
+.product-item:last-child {  
+  margin-right: 0;  
+}
+.product-image {    
+  width: 250px;  
+  height: auto;  
+  display: block; /* Ensure that the image is a block level element */  
+  margin: 0; /* Remove margin as spacing has already been controlled in the. product item */  
+}    
+.product-name {    
+  margin-top: 10px; /* The spacing between buttons and images */  
+  cursor: pointer;    
+}    
+.product-modal {    
+  display: none; /* Hidden by default */  
+  position: fixed; /* Stay in place */  
+  z-index: 1; /* Sit on top */  
+  left: 0;  
+  top: 0;  
+  width: 100%; /* Full width */  
+  height: 100%; /* Full height */  
+  overflow: auto; /* Enable scroll if needed */  
+  background-color: rgba(0,0,0,0.4); /* Fallback color */  
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */  
+}  
+  
+.product-modal-content {  
+  background-color: lightgrey;  
+  margin: 15% auto; /* 15% from the top and centered */  
+  padding: 20px;  
+  border: 1px solid red;  
+  width: 50%; /* Could be more or less, depending on screen size */  
+}  
+  
+/* The Close Button */  
+.close {  
+  color: #aaa;  
+  float: right;  
+  font-size: 28px;  
+  font-weight: bold;  
+}  
+  
+.close:hover,  
+.close:focus {  
+  color: lightblue;  
+  text-decoration: none;  
+  cursor: pointer;  
+}  
+footer {  
+  background-color: #333; /* Footer background color */  
+  color: #fff; /* Text color */  
+  padding: 20px; /* Padding */  
+  text-align: center; /* Text alignment */  
+}  
+  
+footer a {  
+  color: #fff; /* Link color */  
+  text-decoration: none; /* Remove underline from links */  
+}  
+  
+footer a:hover {  
+  color: #ccc; /* Link color on hover */  
+  text-decoration: underline; /* Show underline on hover */  
+}  
+  
+</style>    
+</head>    
+<body>    
+    
+  <div class="header">
+    <img src="1.png" alt="logo" class="left-image">  
+    <h1>Welcome to my Product portfolio page </h1>  
+    <p>Here are some of my  website information.</p> 
+  </div>   
+    
+  <div class="topnav">  
+    <a href="index.html">Home</a>  
+    <a href="support.html">Customer support</a>  
+    <a href="products.html">Product portfolio</a>
+    <a href="blog.html">Blog page</a> 
+    <a href="about.html">About Us</a>
+  </div> 
+    
+<div class="products">    
+  <!-- First product -->  
+  <div class="product-item">  
+    <img src="D.png" alt="Product 1" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal1')">XPS 13</button>  
+  </div>  
+  <div class="product-item">  
+    <img src="E.png" alt="Product 2" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal2')">WH-1000XM5</button>  
+  </div>  
+  <div class="product-item">  
+    <img src="F.png" alt="Product 3" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal3')">EOS R5</button>  
+  </div>  
+  <div class="product-item">  
+    <img src="G.png" alt="Product 4" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal4')">BRAVIA X95K</button>  
+  </div>  
+  <div class="product-item">  
+    <img src="H.png" alt="Product 5" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal5')">Switch OLED</button>  
+  </div>  
+  <div class="product-item">  
+    <img src="I.png" alt="Product 6" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal6')">D850</button>  
+  </div>  
+  <div class="product-item">  
+    <img src="J.png" alt="Product 7" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal7')">Pavilion x360</button>  
+  </div> 
+  <div class="product-item">  
+    <img src="K.png" alt="Product 8" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal8')">iPhone 14 Pro Max</button>  
+  </div> 
+  <div class="product-item">  
+    <img src="L.png" alt="Product 9" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal9')">PlayStation 5r</button>  
+  </div> 
+  <div class="product-item">  
+    <img src="M.png" alt="Product 10" class="product-image">  
+    <button class="product-name" onclick="showModal('productModal10')">y7000</button>  
+  </div> 
+  <!-- More products can be added like this -->  
+</div>  
+  
+<!-- Modal box for the first product -->  
+<div id="productModal1" class="product-modal">  
+  <div class="product-modal-content">  
+    <span class="close" onclick="closeModal('productModal1')">&times;</span>
+    <img src="D.png" alt="Product 1" class="product-image">  
+    <h2>XPS 13</h2>  
+    <p>Appearance design
+      The XPS 13 Plus is manufactured with precision CNC milling of full body aluminum, ensuring durability while also making the surface and edges more delicate and soft. The color scheme of light (twilight cloud white) and dark (near night gray) reflects simplicity, delicacy, fashion, and durability. The thickness of the body is about 15.28mm, and it is as light as 1.25kg. Even girls can lift it with one hand without feeling burdened, making it a lightweight notebook for business trips.</p>  
+    <!-- Add more detailed information about the product here -->  
+  </div>  
+</div> 
+<div id="productModal2" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal2')">&times;</span>
+      <img src="E.png" alt="Product 2" class="product-image">  
+      <h2>WH-1000XM5</h2>  
+      <p>Adopting a brand new minimalist design language, it is composed of the latest developed soft fitting leather and infinite slider, which is more in line with the ears; Equipped with V1+QN1 dual processors, capable of controlling eight microphones; Adopting a specially designed 30mm driver unit (the previous generation was a 40mm driver unit), a lightweight and high-strength hemispherical horn is made of carbon fiber composite material, which can improve high-frequency sensitivity and bring more natural sound quality; There are four microphones on each side of the earmuffs, which can more accurately filter ambient sound and greatly reduce high-frequency noise. The automatic noise reduction optimizer also automatically optimizes the noise reduction performance based on wearing conditions and the environment. In terms of battery life, the WH-1000XM5 noise cancelling earphones can provide 30 hours (with noise cancelling on)/40 hours (with noise cancelling off) of battery life (music), support PD fast charging, and listen for three hours in three minutes of charging (about 3.5 hours to fully charge).</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div> 
+  <div id="productModal3" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal3')">&times;</span>
+      <img src="F.png" alt="Product 3" class="product-image">  
+      <h2>EOS R5</h2>  
+      <p>The new generation of Canon EOS mirrorless cameras has made its debut, breaking the norm and providing users with a model with higher performance and hardware strength, elevating EOS mirrorless cameras to new heights.
+        As a crossover model, the EOS R5 supports the forward-looking 8K specification. Can record 8K RAW, Canon Log, HDR PQ, and 119.88P/100P 4K high frame rate short films, etc,
+        The powerful second-generation full pixel dual core CMOS AF, combined with intelligent tracking performance, provides professional video creators with more choices.
+        Powerful short film shooting performance supports "excellent live streaming" and provides high-quality live streaming solutions.
+        Approximately 45 million effective pixel image sensors create exquisite details, inspiring the creative passion of commercial, portrait, and landscape photographers, among others.
+        And the second generation full pixel dual core CMOS AF with a maximum high-speed continuous shooting of about 20 frames per second, combined with high-speed and high-precision autofocus, and automatic focus coverage of about 100% x 100%,
+        Let sports photographers and others indulge in capturing the thrilling moments of high-speed sports and intense competition.
+        Moreover, the EOS R5 has a built-in body stabilization function. Even with an RF lens without optical stabilization, up to 8 levels of hand shake compensation can be achieved during shooting.
+        The camera operating system combines the advantages of the EOS 5D series and EOS R series, with a reasonable key layout, dual card slot design, and a new high-capacity battery, providing a strong support for commercial photographers to create.</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal4" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal4')">&times;</span>
+      <img src="G.png" alt="Product 4" class="product-image">  
+      <h2>BRAVIA X95K</h2>  
+      <p>Each model supports Acoustic Center Sync. After pairing the TV with a compatible Sony Soundbar, the TV speaker can be used as the central channel to improve audio playback quality. Combined with 360 Spatial Sound Mapping technology, multiple virtual speakers can also be simulated to achieve surround sound effects.
+
+        This year's new product X95L features Acoustic Multi Audio technology, which ensures the alignment of sound and image through targeted sound sources.
+        
+        OLED models such as A95L and A80L use advanced Acoustic Surface Audio+technology, with a large screen that doubles as a speaker, perfectly matching the content on the screen.</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal5" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal5')">&times;</span>
+      <img src="H.png" alt="Product 5" class="product-image">  
+      <h2>Switch OLED</h2>  
+      <p>Nintendo Switch (OLED version) is a gaming console released by Nintendo on July 6, 2021. [1]
+        The Nintendo Switch (OLED version) is equipped with a 7.0-inch OLED screen with a resolution of 720P on the front; Available in two colors: white and electro blue/electro red; The body length is 102 millimeters, width is 242 millimeters, thickness is 13.9 millimeters, and weight is approximately 420 grams. [2]
+        The host memory of Nintendo Switch (OLED version) is 64GB, and microSD cards can be used to further expand the memory capacity; Adopting a large "pivot style" bracket, players can choose their own angle to play desktop mode; Equipped with upgraded speakers, the sound effect has been improved to a certain extent; A wired LAN port is added to the base, which makes the Internet connection more stable when playing TV mode.</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal6" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal6')">&times;</span>
+      <img src="I.png" alt="Product 6" class="product-image">  
+      <h2>D850</h2>  
+      <p>Nikon D850 is a DSLR camera product released globally by Nikon on August 24, 2017
+        The Nikon D850 camera weighs approximately 1005 grams (with battery and XQD storage card, but excluding the body cover), and the camera body weighs approximately 915 grams; The length of the fuselage is 146 millimeters, the width is 124 millimeters, and the height is 78.5 millimeters; It is also equipped with a flippable touch screen and supports full function touch control
+        The Nikon D850 is equipped with a 153 point autofocus system while maintaining a high pixel output of 45 million, and has high-speed continuous shooting performance of 9 frames with and 7 frames without a controller. It can achieve 30 frames of continuous shooting in DX format and has 4K video and full HD five times slow motion shooting capabilities</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal7" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal7')">&times;</span>
+      <img src="J.png" alt="Product 7" class="product-image">  
+      <h2>Pavilion x360</h2>  
+      <p>The HP Pavilion X360 is powered by a 65W battery and can last for over 5 hours, including browsing web pages, watching videos on YouTube, and writing articles on Microsoft Word. In the Battery Eater Pro test, the laptop was completely depleted within two hours, which is comparable to the price range of most laptops. The Pavilion x360 offers elegant design, sturdy construction quality, excellent performance, and excellent touch screen display. Therefore, if you can buy a reasonably priced 2-in-1 in the market, then the Pavilion X360 can meet its needs.</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal8" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal8')">&times;</span>
+      <img src="K.png" alt="Product 8" class="product-image">  
+      <h2>iPhone 14 Pro Max</h2>  
+      <p>The iPhone 14 Pro Max is a mobile phone product released by Apple on September 8, 2022. 
+        The iPhone 14 Pro Max is equipped with a 6.7-inch OLED material screen, featuring four colors: deep black, silver, gold, and dark purple. It is approximately 160.7 millimeters long, 77.6 millimeters wide, 7.85 millimeters thick, and weighs approximately 240g. [
+        The iPhone 14 Pro Max is equipped with an Apple A16 six core processor, with a 12 megapixel front camera and a 48 megapixel main lens, a 12 megapixel ultra wide angle lens, and a 12 megapixel telephoto lens for the rear camera, equipped with a non removable battery</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal9" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal9')">&times;</span>
+      <img src="L.png" alt="Product 9" class="product-image">  
+      <h2>PlayStation 5</h2>  
+      <p>The PS5 is one of the ninth generation gaming consoles. Paired with a controller called DualSense, it uses an adaptive trigger and supports resistance sensing. The CD drive version supports 4K Blu ray playback function. The new installation method allows users to only install part of the game content, such as only installing multiplayer mode; You can also view the multiplayer game servers that can be joined and the activities that can be participated in without starting the game. The PS5 adopts a customized AMD graphics processor, with ray tracing, 4K resolution, 120 frames per second display, 3D sound effects, and backward compatibility with PS4 and PlayStation VR games.</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  <div id="productModal10" class="product-modal">  
+    <div class="product-modal-content">  
+      <span class="close" onclick="closeModal('productModal10')">&times;</span>
+      <img src="M.png" alt="Product 10" class="product-image">  
+      <h2>y7000</h2>  
+      <p>The Lenovo Savior Y7000, as a high-performance gaming laptop, performs exceptionally well in terms of performance. Firstly, it is equipped with Intel's eighth generation Core i7 processor, paired with NVIDIA GeForce GTX 1060 independent graphics card and 8GB DDR4 memory, making it easy to handle most gaming and multimedia tasks. Whether it's running large games, running multiple applications, or editing videos, Y7000 can provide excellent performance</p>  
+      <!-- Add more detailed information about the product here -->  
+    </div>  
+  </div>
+  
+<script>  
+// Function for displaying modal boxes  
+function showModal(modalId) {  
+  var modal = document.getElementById(modalId);  
+  modal.style.display = "block";  
+}  
+  
+// Function to close modal boxes  
+function closeModal(modalId) {  
+  var modal = document.getElementById(modalId);  
+  modal.style.display = "none";  
+}  
+</script>
+
+<footer>  
+  <div class="footer-content">  
+  <p>Copyright &copy; 2024 Fengler'website</p>    
+</footer> 
+  
+</body>  
+</html>
